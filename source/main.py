@@ -20,39 +20,40 @@ wrapper.charge = 0
 wrapper.qubit_mapping = QubitMappingType.PARITY
 wrapper.two_qubit_reduction = True
 
-print('\n\nOnly single excitations:')
-wrapper.excitation_type = 's'
-wrapper.initiate()
-results = wrapper.run_vqe()
-params = [Parameter(f'a_{i}') for i in range(wrapper.vqe_algo.var_form.num_parameters)]
-qc = wrapper.vqe_algo.construct_circuit(params)[0]
-print(qc.decompose())
-qc.draw()
-print(results)
-
-print('\n\nOnly double excitations:')
-wrapper.excitation_type = 'd'
-wrapper.initiate()
-results = wrapper.run_vqe()
-params = [Parameter(f'a_{i}') for i in range(wrapper.vqe_algo.var_form.num_parameters)]
-qc = wrapper.vqe_algo.construct_circuit(params)[0]
-print(qc.decompose())
-qc.draw()
-print(results)
-
-print('\n\nSingle and double excitations:')
-wrapper.excitation_type = 'sd'
-wrapper.initiate()
-results = wrapper.run_vqe()
-params = [Parameter(f'a_{i}') for i in range(wrapper.vqe_algo.var_form.num_parameters)]
-qc = wrapper.vqe_algo.construct_circuit(params)[0]
-print(qc.decompose())
-qc.draw()
-print(results)
+#print('\n\nOnly single excitations:')
+#wrapper.excitation_type = 's'
+#wrapper.initiate()
+#results = wrapper.run_vqe()
+#params = [Parameter(f'a_{i}') for i in range(wrapper.vqe_algo.var_form.num_parameters)]
+#qc = wrapper.vqe_algo.construct_circuit(params)[0]
+#print(qc.decompose())
+#qc.draw()
+#print(results)
+#
+#print('\n\nOnly double excitations:')
+#wrapper.excitation_type = 'd'
+#wrapper.initiate()
+#results = wrapper.run_vqe()
+#params = [Parameter(f'a_{i}') for i in range(wrapper.vqe_algo.var_form.num_parameters)]
+#qc = wrapper.vqe_algo.construct_circuit(params)[0]
+#print(qc.decompose())
+#qc.draw()
+#print(results)
+#
+#print('\n\nSingle and double excitations:')
+#wrapper.excitation_type = 'sd'
+#wrapper.initiate()
+#results = wrapper.run_vqe()
+#params = [Parameter(f'a_{i}') for i in range(wrapper.vqe_algo.var_form.num_parameters)]
+#qc = wrapper.vqe_algo.construct_circuit(params)[0]
+#print(qc.decompose())
+#qc.draw()
+#print(results)
 
 
 print('\n\nMy own variational ansatz:')
 wrapper.ansatz = 'custom'
+wrapper.initiate()
 wrapper.var_form = CTHVarForm(2, wrapper.init_state)
 wrapper.initiate()
 results = wrapper.run_vqe()

@@ -1,0 +1,3 @@
+[submodule "QiskitVQEWrapper"]
+	path = QiskitVQEWrapper
+	url = https://github.com/MartenSkogh/QiskitVQEWrapper.git
